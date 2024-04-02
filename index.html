@@ -1,0 +1,102 @@
+<!DOCTYPE html >
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Bases</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">Guilherme.Braga</div>
+        <ion-icon name="menu-outline" id="menu-icon" onclick="menuOpen()"></ion-icon>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="overlay" id="overlay" onclick="menuOpen()">
+
+    </div>
+    <div class="menu-bar" id="menu-bar">
+        <nav>
+            <ul onclick="menuOpen()">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main id="home">
+        <section class="content">
+            <h1 class="title" id="title">Conversão de bases: trocando a roupa dos números</h1>
+            <p class="lead">
+                Imagine que você tem um número, como 123. Esse número está vestido com a roupa do sistema decimal, que usa 10 algarismos (0, 1, 2, 3, 4, 5, 6, 7, 8, 9). Mas e se você quisesse vestir esse número com a roupa de outro sistema, como o binário, que só usa 2 algarismos (0 e 1)? É aí que entra a conversão de bases!
+            </p>
+            <img src="https://images.pexels.com/photos/6256066/pexels-photo-6256066.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Lousa com cálculos matemáticos">
+            <h2 class="title2">
+                Desvendando o código secreto
+            </h2>
+            <p class="text">
+                A conversão de bases é como um código secreto: você pega um número e o transforma em outro, usando um sistema de numeração diferente. É como se você estivesse traduzindo um texto de um idioma para outro.
+            </p>
+        </section>
+        <section class="content">
+            <h2 class="subtitle">Tente converter um número com nosso conversor</h2>
+            <div class="converter-box">
+                <label for="number">
+                    Número:
+                    <input type="number" name="number" id="number">
+                </label>
+                <div id="group-box">
+                    <label for="Bases">
+                        Para Base:
+                        <select name="Bases" id="base">
+                            <option value="2">Bínario</option>
+                            <option value="8">Octal</option>
+                            <option value="16">Hexadecimal</option>
+                        </select>
+                    </label>
+                <input type="button" value="Converter" class="btn" onclick="convert()">
+
+                </div>
+                <div id="result-area" onclick="copyToClipboard()">
+                    <p id="result"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <a href="#" class="navigation">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </a>
+    <footer>
+        <div class="info-icon">
+            &copy;Guilherme Braga
+        </div>
+        <div class="footer-line"></div>
+        <div class="social-section">
+            <h1 class="title2">Social</h1>
+           <div class="icons">
+            <a href="#" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon>
+               </a>
+                <a href="#" target="_blank">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="#" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                </a>
+           </div>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

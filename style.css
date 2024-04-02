@@ -1,0 +1,474 @@
+/* General configs */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+    font-size: 62.5%;
+    --dark-purple: #1f0031;
+    --neon-green: rgb(136, 255, 0);
+    --text-black: black;
+    --text-white: white;
+    --lead-text-color:rgb(240, 240, 240);
+    --background-color: rgb(19, 1, 20);
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    margin-top  : 6rem;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-white);
+}
+
+.title{
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.title2{
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.text{
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: var(--text-white);
+    margin-bottom: 1.2rem;
+}
+
+.lead{
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--lead-text-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Scrollbar */
+
+body::-webkit-scrollbar{
+    width: 0.1rem;
+    height: 0.1rem;
+    cursor: none;
+}
+
+body::-webkit-scrollbar-track{
+    background: transparent;
+    padding: 2px;
+    
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--neon-green);
+    border-radius: 8px;
+    cursor: none;
+
+}
+
+/* Header*/
+
+header{
+    width: 100%;
+    height: 6rem;
+    padding: 0 9rem;
+    background: var(--dark-purple);
+    color: var(--text-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--neon-green);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-white);
+    transition: 0.2s ease-in-out;
+}
+
+.logo:hover{
+    color: var(--neon-green);
+}
+
+header nav ul{
+    display: flex;
+    gap: 2.5rem;
+}
+
+header nav ul li a{
+    position: relative;
+    cursor: pointer;
+    color: var(--text-white);
+    transition: 0.2s ease-in-out;
+}
+
+header nav ul li a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: var(--neon-green);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+header nav ul li a:hover, header nav ul li a:hover::after{
+    opacity: 1;
+    width: 100%;
+    color: var(--neon-green);
+}
+
+/* Menu-bar */
+
+.overlay{
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.493);
+    backdrop-filter: blur(1px);
+    position: fixed;
+    right: 0;
+    top: 6;
+    z-index: 999997;
+    transition: 0.2s ease-in-out;
+}
+
+.menu-bar{
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 8rem 0;
+    background-color: var(--dark-purple);
+    height: 100vh;
+    width: 0%;
+    z-index: 999998;
+    transition: 0.2s ease-in-out;
+
+}
+
+.menu-bar nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2.5rem;
+}
+
+.menu-bar nav ul li{
+    width: 100%;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-bar nav ul li a{
+    display: inline;
+    position: relative;
+    cursor: pointer;
+    color: var(--text-white);
+    transition: 0.2s ease-in-out;
+}
+
+.menu-bar nav ul li::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--neon-green);
+    opacity: 0;
+    transition: 0.6s ease-in-out;
+}
+
+.menu-bar nav ul li a:hover, .menu-bar nav ul li:hover::after{
+    opacity: 1;
+    width: 100%;
+    color: var(--neon-green);
+}
+
+header ion-icon{
+    display: none;
+    font-size: 3rem;
+    color: var(--text-white);
+    transition: 0.3s ease-in-out;
+}
+
+header ion-icon:hover{
+    color: var(--neon-green);
+}
+
+/* Main  and content */
+
+main{
+    padding: 2rem 10rem 8rem 10rem;
+}
+
+.content{
+    width: 100%;
+}
+
+.content img{
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+/* Converter */
+
+.converter-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+    height: max-content;
+    padding: 1rem;
+    background: rgb(41, 9, 38);
+    border-radius: 8px;
+}
+
+.converter-box input, #btn, label, select{
+    cursor: pointer;
+}
+.converter-box input, select{
+    width: 100%;
+    min-height: 3rem;
+    padding: .2rem .3rem;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgb(255, 255, 255);
+    color: var(--text-black);
+    font-weight: 500;
+}
+
+.converter-box select{
+    color: var(--text-white);
+    background: var(--dark-purple);
+    
+}
+
+.converter-box option{
+    appearance: none;
+    margin: 1rem;
+    border-radius: 10%;
+    color: rgb(255, 255, 255);
+}
+
+#group-box{
+    background: rgba(255, 255, 255, 0.075);
+    padding: .5rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: min-content;
+}
+
+#group-box select{
+    width: 70%;
+}
+
+#group-box label{
+    width: 100%;
+}
+
+
+#group-box .btn{
+    background-color: #540085;
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+    height: 3rem;
+    width: 50%;
+}
+
+#group-box .btn:hover{
+    background-color: #8700d4;
+}
+
+
+#result-area{
+    cursor: pointer;
+    height: max-content;
+    width: 100%;
+    border-radius: 4px;
+    padding: 1rem;
+    background: #ffffff3a;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    word-break: break-all;
+    display: none;
+}
+
+#result{
+    max-width: max-content;
+}
+
+#result-area:hover{
+    transform: scale(1.01);
+    background: #ffffff60;
+}
+
+.hidden{
+    display: block;
+}
+
+/* Navigation */
+
+.navigation{
+    width: 5rem;
+    height: 5rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    border-radius: 50%;
+    background-color: var(--dark-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--neon-green);
+}
+
+.navigation ion-icon{
+    font-size: 30px;
+    color: var(--neon-green);
+
+}
+
+/* Footer */
+
+footer{
+    width: 100%;
+    height: max-content;
+    padding: 2rem 0;
+    background: var(--dark-purple);
+    color: var(--text-white);
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid var(--neon-green);
+}
+
+.footer-line{
+    height: 100%;
+    width: 1rem;
+    background: var(--neon-green);
+}
+
+.social-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.social-section ion-icon, .social-section a{
+    font-size: 2rem;
+    color: var(--text-white);
+    transition: all 0.2s ease-in-out;
+}
+
+.social-section ion-icon:hover{
+    color: var(--neon-green);
+    transform: scale(1.1);
+}
+
+
+/* Responvie section */
+
+@media (max-width:983px){
+    /* Converter */
+
+    .converter-box{
+        width: 100%;
+    }
+
+    #group-box{
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    #group-box select, #group-box .btn{
+        width: 100%;
+    }
+}
+
+@media (max-width:679px){
+
+    /* General configs */
+
+    .title{
+        font-size: 2.5rem;
+    }
+    /* Header */
+
+    header{
+        padding: 0 4rem;
+    }
+
+    header nav{
+        display: none;
+    }
+
+    /* Menu-bar */
+
+    header ion-icon{
+        display: block;
+    }
+
+    .overlay{
+        width: 0;
+    }
+
+    .show{
+        display: block;
+        width: 100%;
+    }
+    .open{
+        width: 70%;
+    }
+    
+
+    /* Main and content */
+
+    main{
+        padding: 2rem 4rem 8rem 4rem;
+    }
+
+}
+
+@media(max-width:398px){
+    /* header */
+    .logo{
+        font-size: 1.8rem;
+    }
+}
