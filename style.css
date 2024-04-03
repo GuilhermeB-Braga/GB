@@ -10,19 +10,19 @@
 
 :root{
     font-size: 62.5%;
-    --dark-purple: #1f0031;
-    --neon-green: rgb(136, 255, 0);
+    --dark-purple: #000000;
+    --neon-green: #04bf45;
     --text-black: black;
     --text-white: white;
     --lead-text-color:rgb(240, 240, 240);
-    --background-color: rgb(19, 1, 20);
+    --background-color: #0d0d0d;
     scroll-behavior: smooth;
 }
 
 body{
     width: 100%;
     height: 100vh;
-    margin-top  : 6rem;
+    margin-top: 6rem;
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
     background-color: var(--background-color);
@@ -93,7 +93,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--neon-green);
+    border-bottom: 1px solid var(--neon-green);
     position: fixed;
     top: 0;
     left: 0;
@@ -249,7 +249,7 @@ main{
     width: 60%;
     height: max-content;
     padding: 1rem;
-    background: rgb(41, 9, 38);
+    background: var(--dark-purple);
     border-radius: 8px;
 }
 
@@ -301,7 +301,7 @@ main{
 
 
 #group-box .btn{
-    background-color: #540085;
+    background-color: #000000;
     color: #ffffff;
     transition: 0.3s ease-in-out;
     height: 3rem;
@@ -309,7 +309,7 @@ main{
 }
 
 #group-box .btn:hover{
-    background-color: #8700d4;
+    background-color: var(--neon-green);
 }
 
 
@@ -375,7 +375,7 @@ footer{
     gap: 2rem;
     justify-content: center;
     align-items: center;
-    border-top: 2px solid var(--neon-green);
+    border-top: 1px solid var(--neon-green);
 }
 
 .footer-line{
